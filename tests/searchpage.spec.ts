@@ -3,7 +3,7 @@ import { test,expect } from "../src/fixtures/pagefixtures";
 test.beforeEach('before each test',async({loginpage})=>{
 
     loginpage.gotoLoginPage();
-    loginpage.doLogin(process.env.APPUSERNAME!,process.env.APPPASSWORD);
+    loginpage.doLogin(process.env.APPUSERNAME!,process.env.APPPASSWORD!);
 
 })
 
