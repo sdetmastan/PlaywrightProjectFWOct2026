@@ -26,7 +26,7 @@ test('home headers show exactly after successfully login', async({})=>{
 
    let headers= await homepage.getpageHeaderslist();
 
-  // expect(await homepage.getpageHeaderslist()).toHaveLength(3);
+  //     ...expect(await homepage.getpageHeaderslist()).toHaveLength(3);
  expect.soft(await homepage.getpageHeaderslist()).toHaveLength(4);
   console.log('homepage header: ',headers);
     expect(await homepage.getpageHeaderslist()).toHaveLength(4);
