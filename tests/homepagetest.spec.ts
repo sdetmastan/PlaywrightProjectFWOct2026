@@ -4,37 +4,37 @@ import { HomePage } from "../src/pages/HomePage";
 
 
 
-let homepage:HomePage;
+let homepage: HomePage;
 
-test.beforeEach( async({page})=>{
+test.beforeEach(async ({ page }) => {
 
-    let loginpage=new LoginPage(page);
-   await loginpage.gotoLoginPage();
- await   loginpage.doLogin('srr@hotmail.com','srr123');
-     homepage=new HomePage(page);
+    let loginpage = new LoginPage(page);
+    await loginpage.gotoLoginPage();
+    await loginpage.doLogin(process.env.APPUSERNAME!, process.env.APPPASSWORD!);
+    homepage = new HomePage(page);
 })
 
 
 
-test('home page successfully login', async({})=>{
+test('home page successfully login', async ({ }) => {
 
     expect(await homepage.logoutIsVisible()).toBeTruthy();
 
 })
 
-test('home headers show exactly after successfully login', async({})=>{
+test('home headers show exactly after successfully login', async ({ }) => {
 
-   let headers= await homepage.getpageHeaderslist();
+    let headers = await homepage.getpageHeaderslist();
 
-  //     ...expect(await homepage.getpageHeaderslist()).toHaveLength(3);
- expect.soft(await homepage.getpageHeaderslist()).toHaveLength(4);
-  console.log('homepage header: ',headers);
+    //     ...expect(await homepage.getpageHeaderslist()).toHaveLength(3);
+    expect.soft(await homepage.getpageHeaderslist()).toHaveLength(4);
+    console.log('homepage header: ', headers);
     expect(await homepage.getpageHeaderslist()).toHaveLength(4);
-   expect(await homepage.getpageHeaderslist()).toEqual([
-    'My Account',
-    'My Orders',
-    'My Affiliate Account',
-    'Newsletter'
-   ])
+    expect(await homepage.getpageHeaderslist()).toEqual([
+        'My Account',
+        'My Orders',
+        'My Affiliate Account',
+        'Newsletter'
+    ])
 
 })

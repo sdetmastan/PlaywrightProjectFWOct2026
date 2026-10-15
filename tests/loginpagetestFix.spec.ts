@@ -1,5 +1,5 @@
 import { expect, test } from "../src/fixtures/pagefixtures";
-import { csvHelper} from "../src/utils/csvHelper";
+import { csvHelper } from "../src/utils/csvHelper";
 import { jsonHelper } from "../src/utils/jsonHelper";
 
 
@@ -66,12 +66,12 @@ for (let row of testdata) {
 }
 
 //with JSON file 1
-let data=jsonHelper.jsonreader('src/data/logindata.json');
-for(let row of data){
+let data = jsonHelper.jsonreader('src/data/logindata.json');
+for (let row of data) {
 
-    test(`invalid test data: ${row.username}`,async({loginpage}) =>{
+    test(`invalid test data: ${row.username}`, async ({ loginpage }) => {
 
-        await loginpage.doLogin(row.username,row.password);
+        await loginpage.doLogin(row.username, row.password);
         await loginpage.verifyinvalidLoginerror();
 
 
