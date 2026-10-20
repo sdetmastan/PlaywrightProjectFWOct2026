@@ -7,7 +7,7 @@ test.beforeEach('before each test', async ({ loginpage }) => {
 
 })
 
-test('Search product test', async ({ homepage, searchrespage }) => {
+test('@sanity Search product test', async ({ homepage, searchrespage }) => {
 
     expect(await homepage.logoutIsVisible()).toBeTruthy();
     //await expect(await homepage.logoutIsVisible()).toBeVisible();

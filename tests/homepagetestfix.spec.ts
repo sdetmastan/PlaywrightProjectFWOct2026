@@ -12,13 +12,13 @@ test.beforeEach(async ({ loginpage }) => {
 
 
 
-test('home page successfully login', async ({ homepage }) => {
+test('@smoke home page successfully login', async ({ homepage }) => {
 
    expect(homepage.logoutIsVisible()).toBeTruthy();
 
 })
 
-test('home headers show exactly after successfully login', async ({ homepage }) => {
+test('@regression home headers show exactly after successfully login', async ({ homepage }) => {
 
    let headers = await homepage.getpageHeaderslist();
 

@@ -32,7 +32,7 @@ test('this is my fogot page test', async ({ loginpage }) => {
 })
 
 
-test('this is login page test', async ({ loginpage }) => {
+test(' @smoke this is login page test', async ({ loginpage }) => {
 
     //let myloginpage=new LoginPage(page);
     //await loginpage.gotoLoginPage();

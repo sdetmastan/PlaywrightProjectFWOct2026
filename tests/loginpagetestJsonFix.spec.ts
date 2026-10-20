@@ -13,7 +13,7 @@ test.beforeEach(async ({ loginpage }) => {
 //let data=jsonHelper.jsonreader('src/data/logindata.json');
 for (let row of testdata.users) {
 
-    test(`invalid test data json: ${row.username}`, async ({ loginpage }) => {
+    test(`@regression invalid test data json: ${row.username}`, async ({ loginpage }) => {
 
         await loginpage.doLogin(row.username, row.password);
         await loginpage.verifyinvalidLoginerror();
